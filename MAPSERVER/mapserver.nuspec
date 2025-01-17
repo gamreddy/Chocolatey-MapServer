@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>mapserver</id>
+    <version>8.2.0</version>
+    <owners>gamreddy</owners>
+    <title>mapserver fastcgi</title>
+    <authors>OSGEO</authors>
+    <tags>mapserver 8.2.0</tags>
+    <summary>MapServer FastCGI choco package</summary>
+    <description>
+      Choco package for MapServer. 
+      #### Package Parameters
+
+      * `/InstallationPath:` - Where to install mapserver - defaults to "$env:SystemDrive\temp"
+      * `/ZipUrl:` - mapserver zip folder url - defaults to "https://www.gisinternals.com/query.html?content=filelist&file=release-1930-x64-gdal-3-10-0-mapserver-8-2-2.zip"
+      * `/MapServerConfigFile:` - mapserver config file - defaults to "C:\apps\mapserver.conf"
+      * `/MapCacheConfigFile:` - mapcache config file - defaults to "C:\apps\mapcache.xml"
+
+      To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
+      To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+    </description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
